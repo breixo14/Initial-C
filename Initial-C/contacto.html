@@ -1,3 +1,76 @@
-Contacto
-<a href="index.html">
-</a>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>  
+
+<body>
+  <!-- Video de fondo -->
+  <video src="recursos/video/bmw m4 60fps loop by visualdon.mp4" autoplay muted loop poster="https://carontestudio.com/img/contacto.jpg"></video>
+
+  <!-- Contenido principal de la página -->
+  <div class="contenido">
+    <h1 style="color: white;">
+      Initial-<span style="color:red;">C</span>
+    </h1>
+    <p class="caja">
+      <!-- Aquí va el contenido específico de cada página -->
+      Bienvenidos a nuestra sección de coches. Aquí podrás explorar los modelos más rápidos y exclusivos.
+    </p>
+
+    <div class="caja">
+      <a href="contacto.html">Contacto</a>
+      <a href="coches.html">Coches</a>
+      <a href="colaboradores.html">Colaboradores</a>
+    </div>
+  </div>
+
+  <!-- Reproductor de audio -->
+  <div class="volume-control">
+    <span id="mute-icon" class="mute-icon">🔊</span>
+    <input type="range" id="volume-bar" class="volume-bar" value="100" max="100">
+  </div>
+  <audio id="audio" src="recursos/audio/music.mp3" type="audio/mp3"></audio>
+  <button id="playPauseButton">Play</button>
+
+  <script>
+    const audio = document.getElementById('audio');
+    const muteIcon = document.getElementById('mute-icon');
+    const volumeBar = document.getElementById('volume-bar');
+    const playPauseButton = document.getElementById('playPauseButton');  // Aquí agregamos el botón
+  
+    // Controlar el sonido (mute/unmute)
+    muteIcon.addEventListener('click', () => {
+      if (audio.muted) {
+        audio.muted = false;
+        muteIcon.textContent = '🔊';  
+      } else {
+        audio.muted = true;
+        muteIcon.textContent = '🔇'; 
+      }
+    });
+  
+    // Ajustar el volumen con la barra de volumen
+    volumeBar.addEventListener('input', () => {
+      audio.volume = volumeBar.value / 100;
+    });
+  
+    // Control de Play/Pausa
+    playPauseButton.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        playPauseButton.textContent = 'Pause';  // Cambiar el texto del botón a "Pause" cuando se está reproduciendo
+      } else {
+        audio.pause();
+        playPauseButton.textContent = 'Play';  // Cambiar el texto del botón a "Play" cuando está en pausa
+      }
+    });
+  </script>
+
+</body>
+
+</html>

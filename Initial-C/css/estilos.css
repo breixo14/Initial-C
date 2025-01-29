@@ -22,15 +22,34 @@ body {
   h1 {
     font-family: 'Orbitron', sans-serif;
     font-size: 3rem;
-    color: #ff007f; /* Tono neón */
+    color: #ffffff; /* Tono neón */
     text-align: center;
     margin: 0;
   }
-  
+  .initial {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    position: fixed; /* Fija el elemento en la pantalla */
+    bottom: 90%; /* Se coloca 20px desde el borde inferior */
+    right: 8%; /* Se coloca 20px desde el borde derecho */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+
+  }
   .caja {
     margin: 20px 0 0 0;
     font-family: 'Orbitron', sans-serif;
     background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  .caja p{
+    margin: 20px 0 0 0;
+    font-family: 'Orbitron', sans-serif;
+    background: rgba(3, 0, 0, 0.7);
     color: white;
     padding: 20px;
     width: 30%;
@@ -98,4 +117,41 @@ body {
     background: white; /* Círculo blanco */
     cursor: pointer;
   }
-  
+  /* Contenedor de la galería de coches */
+  .car-gallery {
+    width: 80%; /* Ocupa el 80% del ancho */
+    height: 70%; /* Ocupa el 70% de la altura */
+    background: rgba(128, 128, 128, 0.7); /* Fondo gris con transparencia */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    overflow-y: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 500; /* Asegura que esté encima del video de fondo */
+  }
+
+  /* Estilo para cada item de coche */
+  .car-item {
+    width: 45%; /* Cada item ocupa el 45% del ancho del contenedor */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .car-item img {
+    width: 100%; /* Las imágenes ocupan todo el ancho del contenedor */
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .car-item p {
+    color: white;
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro y transparente para la descripción */
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
