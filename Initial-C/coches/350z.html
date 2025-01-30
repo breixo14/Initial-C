@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>  
+
+<body>
+  <!-- Video de fondo -->
+  <video src="../recursos/video/bmw m4 60fps loop by visualdon.mp4" autoplay muted loop poster="https://carontestudio.com/img/contacto.jpg"></video>
+
+  <!-- Contenido principal de la página -->
+  
+    <h1 class="initial"">
+        Initial-<span style="color:red;">C</span>
+    </h1>
+    <div class="car-gallery">
+      <div class="car-item">
+        <img src="../recursos/350z.jpg" alt="Coche 1">
+        <table>
+            <tr class="atributo-valor2">
+                <th>Atributo</th>
+                <th>Valor</th>
+            </tr>
+            <tr>
+                <td>Potencia</td>
+                <td>287 HP (Stock)</td>
+            </tr>
+            <tr>
+                <td>Velocidad Máxima</td>
+                <td>250 km/h</td>
+            </tr>
+            <tr>
+                <td>Aceleración 0-100 km/h</td>
+                <td>5.8 seg</td>
+            </tr>
+            <tr>
+                <td>Manejo</td>
+                <td class="emoji">🔥🔥🔥🔥</td>
+            </tr>
+            <tr>
+                <td>Personalización</td>
+                <td>Amplia (bodykits, alerones, neones y más)</td>
+            </tr>
+        </table>
+        <p>Si buscas un bólido equilibrado con estilo agresivo y alma de derrapador, el 350Z es tu elección. <strong>¿Listo para dejar marcas en el asfalto?</strong> 🏎
+      </div>  
+    </div> 
+
+    <div class="caja">
+      <a href="../contacto.html">Contacto</a>
+      <a href="../coches.html">Coches</a>
+      <a href="../colaboradores.html">Colaboradores</a>
+    </div>
+  </div>
+
+  <!-- Reproductor de audio -->
+  <div class="volume-control">
+    <span id="mute-icon" class="mute-icon">🔊</span>
+    <input type="range" id="volume-bar" class="volume-bar" value="100" max="100">
+  </div>
+  <audio id="audio" src="recursos/audio/music.mp3" type="audio/mp3"></audio>
+  <button id="playPauseButton">Play</button>
+
+  <script>
+    const audio = document.getElementById('audio');
+    const muteIcon = document.getElementById('mute-icon');
+    const volumeBar = document.getElementById('volume-bar');
+    const playPauseButton = document.getElementById('playPauseButton');  // Aquí agregamos el botón
+  
+    // Controlar el sonido (mute/unmute)
+    muteIcon.addEventListener('click', () => {
+      if (audio.muted) {
+        audio.muted = false;
+        muteIcon.textContent = '🔊';  
+      } else {
+        audio.muted = true;
+        muteIcon.textContent = '🔇'; 
+      }
+    });
+  
+    // Ajustar el volumen con la barra de volumen
+    volumeBar.addEventListener('input', () => {
+      audio.volume = volumeBar.value / 100;
+    });
+  
+    // Control de Play/Pausa
+    playPauseButton.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        playPauseButton.textContent = 'Pause';  // Cambiar el texto del botón a "Pause" cuando se está reproduciendo
+      } else {
+        audio.pause();
+        playPauseButton.textContent = 'Play';  // Cambiar el texto del botón a "Play" cuando está en pausa
+      }
+    });
+  </script>
+
+</body>
+
+</html>
